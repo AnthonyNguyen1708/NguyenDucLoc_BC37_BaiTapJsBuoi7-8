@@ -219,7 +219,7 @@ document.getElementById("btn-bai4").addEventListener("click", function () {
 document.getElementById("btn-bai5").addEventListener("click", function () {
   var newArr = [];
   for (i = 0; i < arr.length; i++) {
-    if (arr[i] > 0) {
+    if (arr[i] > 0 && arr[i] % 2 == 0) {
       newArr.push(arr[i]);
     }
   }
