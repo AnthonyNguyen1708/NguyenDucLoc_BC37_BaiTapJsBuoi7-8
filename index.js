@@ -1,155 +1,3 @@
-// var numberArr = [];
-
-// function themSo() {
-
-//     var numberValue = document.getElementById("number").value*1;
-//     numberArr.push(numberValue)
-
-//     document.getElementById("number").value="";
-//     document.getElementById("input-data").innerText = numberArr
-// }
-
-// //bai 1
-// document.getElementById("btn-tinh-tong").addEventListener("click", function() {
-//     var sum = 0;
-//     for (index = 0; index < numberArr.length; index++){
-//         if (numberArr[index] > 0) {
-//             sum += numberArr[index]*1;
-//             document.getElementById("tong-so-duong").innerHTML = `<div>Tổng số dương: ${sum}</div>`
-//         } else {
-//             document.getElementById("tong-so-duong").innerHTML = `<div>Hãy nhập số dương</div>`
-//         }
-//     }
-// });
-
-// //bai 2
-// document.getElementById("btn-dem-so").addEventListener("click", function() {
-
-//     var count = 0;
-//     for (index = 0; index < numberArr.length; index++){
-//         if (numberArr[index] > 0) {
-//             count++;
-//             document.getElementById("dem-so-duong").innerHTML = `<div>Tổng số dương: ${count}</div>`
-//         } else {
-//             document.getElementById("dem-so-duong").innerHTML = `<div>Hãy nhập số dương</div>`
-//         }
-//     }
-// });
-
-// //bai 3
-// document.getElementById("btn-so-nho").addEventListener("click", function() {
-//     var min = numberArr[0];
-//     for (var index = 0; index < numberArr.length; index++) {
-//         if (numberArr[index] < min) {
-//             min = numberArr[index];
-//         }
-
-//         document.getElementById("tim-so-nho").innerHTML= `<div>Số nhỏ nhất: ${min}</div>`
-//     }
-
-// });
-
-// //bai 4
-// document.getElementById("btn-bai4").addEventListener("click", function() {
-//     var newArr = [];
-//     var minDuong = null;
-
-//     for (index = 0; index < numberArr.length; index++) {
-//         if (numberArr[index] > 0) {
-//             newArr.push(numberArr[index])
-//         }
-//     }
-
-//     for (var i = 0; i <= newArr.length; i++){
-//         minDuong = newArr[0];
-//         if(newArr.length !== 0 ){
-//             if (minDuong >= newArr[i] ){
-//                 minDuong = newArr[i]
-//                 document.getElementById("result-bai4").innerHTML = `Số dương nhỏ nhất: ${minDuong}`
-//             }
-//         } else {
-//             document.getElementById("result-bai4").innerHTML = `Không có số dương`
-//         }
-//     }
-//     document.getElementById("result-bai4").innerHTML= `<div>${ketQuaBai4}</div>`
-// })
-
-// //bai 5
-// document.getElementById("btn-bai5").addEventListener("click", function() {
-//     var soChanCuoiCung = 0;
-//     var arrSoChan = [];
-//     for (index = 0; index < numberArr.length; index++) {
-//         if (numberArr[index]*1 % 2 == 0) {
-//             arrSoChan.push(numberArr[index])
-//         }
-//     }
-//     var result = "";
-//     var viTriSoChan = arrSoChan.length - 1;
-//     soChanCuoiCung = arrSoChan[viTriSoChan]
-
-//     if (arrSoChan.length != 0) {
-//         result = `Số chẵn cuối cùng: ${soChanCuoiCung}`
-//     } else {
-//         result = `Không có số chẵn`
-//     }
-
-//     document.getElementById("result-bai5").innerHTML = `<div>${result}</div>`
-// })
-
-// //bai 6
-// document.getElementById("btn-bai6").addEventListener("click", function() {
-//     var pos1 = document.getElementById("txt-vt1").value * 1;
-//     var pos2 = document.getElementById("txt-vt2").value * 1;
-
-//     var newIndex = numberArr[pos1];
-//     numberArr[pos1] = numberArr[pos2];
-//     numberArr[pos2] = newIndex;
-
-//     document.getElementById("result-bai6").innerHTML = `Mảng sau khi đổi: ${numberArr}`
-// })
-
-// //bai 7
-// document.getElementById("btn-bai7").addEventListener("click", function() {
-//     var newArr = null;
-//     for (i = 0; i < numberArr.length; i++) {
-//         for (j = i + 1; j < numberArr.length; j++) {
-//             if (numberArr[i] > numberArr[j]) {
-//                 newArr = numberArr[i];
-//                 numberArr[i] = numberArr[j];
-//                 numberArr[j] = newArr;
-//             }
-//         }
-//     }
-
-//     document.getElementById("result-bai7").innerHTML = `Mảng sau khi đổi: ${numberArr}`
-// })
-
-// //bai 8
-// document.getElementById("btn-bai8").addEventListener("click", function() {
-//     var sntArr = [];
-//     var soNguyenTo= null;
-//     for (i = 0; i < numberArr.length; i++) {
-//         if (numberArr[i] >= 2) {
-//             sntArr.push(numberArr[i])
-//         } else {
-//             soNguyenTo = -1;
-//         }
-//     }
-
-//     for (j = 0; j < sntArr.length; j++) {
-//         if (sntArr[j] == 2) {
-//             soNguyenTo = 2;
-//             break
-//         } else if (sntArr[j] % 2 != 0) {
-//             soNguyenTo = sntArr[j];
-//             break
-//         } else {
-//             soNguyenTo = -1
-//         }
-//     }
-//     document.getElementById("result-bai8").innerHTML = `${soNguyenTo}`
-// })
-
 var arr = [];
 
 document.getElementById("btn-add-numb").addEventListener("click", function () {
@@ -166,9 +14,12 @@ document.getElementById("btn-bai1").addEventListener("click", function () {
   for (i = 0; i < arr.length; i++) {
     if (arr[i] > 0) {
       sum += arr[i];
+      document.getElementById("result-bai1").innerText = sum;
+    } else {
+      document.getElementById("result-bai1").innerText =
+        "không có số dương trong mảng được nhập";
     }
   }
-  document.getElementById("result-bai1").innerText = sum;
 });
 
 //bai 2
@@ -179,9 +30,14 @@ document.getElementById("btn-bai2").addEventListener("click", function () {
       count += 1;
     }
   }
-  document.getElementById(
-    "result-bai2"
-  ).innerText = `Có ${count} số dương trong mảng`;
+  if (count > 0) {
+    document.getElementById(
+      "result-bai2"
+    ).innerText = `Có ${count} số dương trong mảng`;
+  } else {
+    document.getElementById("result-bai2").innerText =
+      "không có số dương trong mảng được nhập";
+  }
 });
 
 //bai 3
@@ -205,15 +61,20 @@ document.getElementById("btn-bai4").addEventListener("click", function () {
       newArr.push(arr[i]);
     }
   }
-  var min = newArr[0];
-  for (i = 0; i < newArr.length; i++) {
-    for (j = 1; j < newArr.length; j++) {
-      if (min > newArr[i]) {
-        min = newArr[i];
+  if (newArr.length != 0) {
+    var min = newArr[0];
+    for (i = 0; i < newArr.length; i++) {
+      for (j = 1; j < newArr.length; j++) {
+        if (min > newArr[i]) {
+          min = newArr[i];
+        }
       }
     }
+    document.getElementById("result-bai4").innerText = min;
+  } else {
+    document.getElementById("result-bai4").innerText =
+      "không có số dương trong mảng được nhập";
   }
-  document.getElementById("result-bai4").innerText = min;
 });
 //bai 5
 document.getElementById("btn-bai5").addEventListener("click", function () {
@@ -223,9 +84,65 @@ document.getElementById("btn-bai5").addEventListener("click", function () {
       newArr.push(arr[i]);
     }
   }
-  document.getElementById("result-bai5").innerText = newArr[newArr.length - 1];
+  if (newArr.length != 0) {
+    document.getElementById("result-bai5").innerText =
+      newArr[newArr.length - 1];
+  } else {
+    document.getElementById("result-bai5").innerText =
+      "không có số chẵn trong mảng được nhập";
+  }
 });
 
+//bai 6
+document.getElementById("btn-bai6").addEventListener("click", function () {
+  var pos1 = document.getElementById("txt-vt1").value * 1;
+  var pos2 = document.getElementById("txt-vt2").value * 1;
+
+  var newIndex = arr[pos1];
+  arr[pos1] = arr[pos2];
+  arr[pos2] = newIndex;
+
+  document.getElementById("result-bai6").innerHTML = `Mảng sau khi đổi: ${arr}`;
+});
+
+//bai 7
+document.getElementById("btn-bai7").addEventListener("click", function () {
+  for (j = arr.length - 1; j >= 0; j--) {
+    for (i = 0; i < j; i++) {
+      if (arr[i] > arr[i + 1]) {
+        var index = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = index;
+      }
+    }
+  }
+  document.getElementById("result-bai7").innerHTML = `Mảng sau khi đổi: ${arr}`;
+});
+
+//bai 8
+
+document.getElementById("btn-bai8").addEventListener("click", function () {
+  var arr2 = [];
+  var soNguyenTo = null;
+  for (j = 0; j < arr.length; j++) {
+    if (arr[j] >= 2) {
+      arr2.push(arr[j]);
+    }
+  }
+  for (i = 0; i < arr2.length; i++) {
+    if (arr2[i] == 2 || arr2[i] == 3 || arr2[i == 5]) {
+      soNguyenTo = arr2[i];
+      break;
+    } else if (arr2[i] % 2 != 0 && arr2[i] % 3 != 0 && arr2[i] % 5 != 0) {
+      soNguyenTo = arr2[i];
+      break;
+    } else {
+      soNguyenTo = -1;
+    }
+  }
+  document.getElementById("result-bai8").innerHTML = soNguyenTo;
+  console.log(arr2);
+});
 //bai 9
 var arr2 = [];
 
